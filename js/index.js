@@ -2,7 +2,7 @@
 //1
 const loginButton = document.querySelector('.btn');
 
-loginButton.addEventListener('click', (event) => {
+loginButton.addEventListener('click', () => {
     window.open ("https://www.facebook.com/login", "Facebook_WindowName", "resizable, status");
 });
 
@@ -11,7 +11,7 @@ loginButton.addEventListener('click', (event) => {
 //2
 const fullImage = document.querySelector('header img');
 
-fullImage.addEventListener('dblclick', (event) => {
+fullImage.addEventListener('dblclick', () => {
     window.open ("http://localhost:58496/fun-bus.927a34f2.jpg", "fun bus", "resizeable");
 });
 
@@ -52,6 +52,40 @@ el.onwheel = zoom;
 //6
 document.addEventListener('keydown', (event) => {
     if (event.key === '+') {
-        body.taget.style.color = 'red'
+        document.taget.style.color = 'red'
     }
 })
+
+
+
+const navItems = document.querySelectorAll('a.nav-link');
+
+navItems.forEach((link) => {
+
+    //7
+    link.addEventListener('mouseover', (event) => {
+        event.target.style.color = 'red';
+    });
+
+    //8
+    link.addEventListener('mouseout', (event) => {
+        event.target.style.color = 'black';
+    });
+});
+
+
+//9
+const goImg = document.querySelector('.img-content img')
+
+goImg.addEventListener('click', () => {
+    window.open ("http://localhost:58496/adventure.009d0496.jpg", "go image", "resizeable");
+});
+
+
+//10
+navItems.forEach((link) => {
+
+    link.addEventListener('click', (event) => {
+        event.preventDefault();
+    });
+});
